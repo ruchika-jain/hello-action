@@ -34,7 +34,6 @@ jobs:
         id: publish-action
         with:
           package-name: 'hello-github'
-          semver: 1.0.2
 
       - name: Signing action
         uses: ruchika-jain/sign-package@1.0.1
