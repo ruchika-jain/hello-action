@@ -4,6 +4,8 @@ on: # rebuild any PRs and main branch changes
     types: [created]
   repository_dispatch:
     types: [actions-package-migrate]
+permissions:
+  packages: write
 
 jobs:
   package-and-publish: # make sure the action works on a clean machine without building
@@ -29,7 +31,7 @@ jobs:
        run: echo '${{ toJSON(github) }}'
         
      - name: Publish action 
-       uses: actions-on-packages/package-action@0.4.4
+       uses: actions-on-packages/package-action@0.4.2
 #        with: 
 #            path: 'dist/'
         
